@@ -1,0 +1,35 @@
+E)Use Pure functions
+
+there are three main parts of a function.
+The input
+The relationship
+The Output
+
+def multiplyByTwo(i : Int): Int = { i * 2 }
+
+Pure Function Rules
+The Function input solely determines the Function output.
+The Function does not change its input.
+The Function does not have any side effects.
+
+If a Function qualifies for above three conditions, it is a pure function.
+
+Benefits of Pure Functions
+1)Pure functions encourage safe ways of programming
+Most of the time, we look at the function name and try to guess the functionality. A function with side effect requires you to look at the documentation or the source code. On the other side, Pure Functions are small, precise, simple, safe and straightforward to reuse. A pure function guarantees that they will not modify anything outside their body. 
+You can use them with confidence because you know that they take input and give output. They do not surprise you.
+
+2)Pure functions are more composable or modular
+val x = mydata.doThis(a).
+              .thenThis(b)
+              .andThenThis(c)
+              .doThisToo(d)
+              .andFinallyThis(e)
+              
+ We refer this capability as functional composition. You can combine multiple functions more confidently if you know that there are no side effects.
+ 
+ 3)Pure functions are easy to test and refactor
+ You just need to pass the known value and assert the expected value. 
+ 
+ 
+ 
