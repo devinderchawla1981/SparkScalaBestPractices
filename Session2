@@ -1,0 +1,45 @@
+References: https://www.learningjournal.guru/article/scala/functional-programming/anonymous-function/
+
+A)MUST NOT use "return" 
+Last statement is return value from function. No need to write return explicitly.
+
+B)Prefer immutable code. Use vals and immutable collections first 
+
+C)Drop the null keyword from your vocabulary. Use the Option/Some/None and Try/Success/Failure classes
+
+D)Use Anonymous function where they can be used
+
+A standard function has a name, a list of parameters, a return type, and a body. If you do not give a name to a function, it is an anonymous function.
+def doubler(i: Int) = { i * 2 }
+(i: Int) => { i * 2 }
+
+A normal function uses = symbol whereas an Anonymous function uses => symbol. Some people call it an anonymous function whereas others may refer it as lambda.
+ou might be wondering how to call this function if it does not have a name. You can assign it to a variable.
+
+val d = (i: Int) => { i * 2 }
+
+d(3)
+//Output:- 6
+
+purpose of an anonymous function?
+There might be scenarios where you want to create an inline function for a one-time usage. 
+Giving a name to a function does not make any sense if you do not want to use it anywhere else. In those scenarios, creating an anonymous function is quite convenient.
+Below is one example:
+def getOps(c: Int) = {
+  def doubler(x: Int) = x * 2
+  def tripler(x: Int) = x * 3
+  if (c > 0)
+    doubler _
+  else
+    tripler _
+}
+
+def getOps(c: Int) = {
+  if (c > 0)
+    (x:Int) = {x * 2}
+  else
+    (x:Int) = {x * 3}
+}
+
+You may have several such scenarios where you just want to create a function and use it right there only. 
+
