@@ -1,1 +1,32 @@
+A)Scala is both a Functional programming and Object Oriented programming language that runs on the JVM! 
+
+In Step 1 of the diagram, as a developer, you will write your Scala code. 
+In Step 2 of the diagram, you will call the Java compiler namely javac to compile your Java code. With regards to compiling your Scala code, you would use the Scala compiler namely scalac. 
+In most cases, you will be using an Integrated Development Environment or IDE to help you easily write and compile your applications.
+In Step 3 of the diagram,  your compiled classes are converted into byte code which is in essence the language that the JVM understands and where your code will eventually be run from. 
+
+
+B)GetClass
+you need not specify the type of a value or variable. It is inferred from the type of the expression with which you initialize it. 
+you may occasionally want to print the class/type of an object to understand how Scala works, or to debug code.
+
+When you want to learn about the types Scala is automatically assigning on your behalf, call the getClass method on the object.
+
+scala> def printClass(c: Any) { println(c.getClass) }
+printClass: (c: Any)Unit
+
+scala> printClass(1)
+class java.lang.Integer
+
+scala> printClass("yo")
+class java.lang.String
+
+ C)How do I dynamically instantiate an object and invoke a method using reflection?
+ 
+ 
+
+
+
+
+1)How to determine the class of a Scala object (getClass)
 
