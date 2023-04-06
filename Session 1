@@ -23,10 +23,30 @@ class java.lang.String
 
  C)How do I dynamically instantiate an object and invoke a method using reflection?
  
+ There is an easier way to invoke method reflectively without resorting to calling Java reflection methods: use Structural Typing.
  
+ class Foo {
+  def hello(name: String): String = "Hello there, %s".format(name)
+}
+
+object FooMain {
+
+  def main(args: Array[String]) {
+    val foo  = Class.forName("Foo").newInstance.asInstanceOf[{ def hello(name: String): String }]
+    println(foo.hello("Walter")) // prints "Hello there, Walter"
+  }
+}
+
+You can create as many classes with names like Foo, Goo,Hoo etc and need to define a method with common name and signature hello().
+Inside hello() you can do different things depending on need.
+
+when creating object foo in main() you have to pass class name e.g. "Foo" here and method def in parameter (which will be same in every case).
+After that you are calling foo.hello() which will call method depending on class name.
+
+we can use same code while implementing transformations in RTP code as multiple if else has been mentioned there.
+We need to define method with one common name in each transformation class with one parameter and inside that we can have different implementations.
 
 
 
 
-1)How to determine the class of a Scala object (getClass)
-
+ 
